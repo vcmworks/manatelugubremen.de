@@ -6,12 +6,10 @@
     <title>Home | Telugu Association Bremen (TAB)</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Internal Page-Specific Overrides */
-        /* Internal Page-Specific Overrides */
+        /* Hero section specific to the Home Page */
         .hero-section {
-            /* Updated to a Light Red / Deep Orange Gradient */
             background: linear-gradient(rgba(231, 76, 60, 0.8), rgba(192, 57, 43, 0.9)), url('ugadi-bg.jpg'); 
-            height: 300px; 
+            height: 450px; 
             background-size: cover; 
             background-position: center; 
             color: white; 
@@ -21,12 +19,12 @@
             align-items: center; 
             text-align: center; 
             padding: 20px;
-            border-bottom: 8px solid #f1c40f;
+            border-bottom: 8px solid var(--saffron-yellow);
         }
 
         .hero-title {
             font-size: 3.5rem; 
-            color: #f1c40f; 
+            color: var(--saffron-yellow); 
             margin: 0; 
             text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
             font-weight: 900;
@@ -39,8 +37,6 @@
             margin-top: 10px;
         }
 
-  
-
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -50,33 +46,37 @@
 
         .history-tag {
             display: inline-block;
-            background: #27ae60;
+            background: var(--primary-green);
             color: #fff;
             padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             margin-right: 5px;
             margin-bottom: 10px;
+            font-weight: bold;
         }
 
         .contact-box {
             background: #ffffff;
-            border: 2px solid #f1c40f;
-            padding: 20px;
+            border: 2px solid var(--saffron-yellow);
+            padding: 25px;
             border-radius: 15px;
             margin-top: 20px;
         }
 
         .flyer-preview img {
             width: 100%;
+            height: auto;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             border: 6px solid #fff;
-            transition: transform 0.3s;
         }
-        
-        .flyer-preview img:hover {
-            transform: scale(1.02);
+
+        /* Mobile specific adjustments for index */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .hero-section { height: auto; padding: 60px 20px; }
         }
     </style>
 </head>
@@ -88,53 +88,53 @@
     </header>
 
     <nav>
-        <a href="index.html">HOME</a>
+        <a href="index.html" style="background: var(--primary-green); color: var(--saffron-yellow);">HOME</a>
         <a href="about.html">ABOUT</a>
-        <a href="schedule.html">UGADI SCHEDULE</a>
+        <a href="schedule.html">SCHEDULE</a>
         <a href="register.html">REGISTER</a>
     </nav>
 
     <section class="hero-section">
         <h1 class="hero-title">UGADI SAMBARALU 2026</h1>
-        <p class="hero-subtitle">Parābhava Nama Samvatsaram Celebrations</p>
-        <a href="register.html" class="back-btn">REGISTER NOW</a>
+        <p class="hero-subtitle">Prabava Nama Samvatsaram Celebrations</p>
+        <a href="register.html" class="back-btn" style="margin-top: 25px;">REGISTER NOW</a>
     </section>
 
     <main class="container">
         
         <div class="info-grid">
             <div class="card">
-                <h2>Welcome to our Community</h2>
-                <p>The <strong>Telugu Association Bremen (TAB)</strong> is proud to host the 2026 Ugadi festivities. Following our incredible journey with the community, we look forward to another year of cultural bonding.</p>
+                <h2>Namaste & Welcome</h2>
+                <p>The <strong>Telugu Association Bremen (TAB)</strong> is excited to welcome the community for the 2026 Ugadi festivities. Our mission is to keep our cultural traditions alive in the heart of Northern Germany.</p>
                 
-                <h3 style="color: #27ae60; margin-top: 25px;">Our Legacy of Success</h3>
+                <h3 style="margin-top: 25px;">Our Community Highlights</h3>
                 <div>
                     <span class="history-tag">Sankranthi 2023</span>
                     <span class="history-tag">Ugadi 2023</span>
                     <span class="history-tag">Sankranthi 2024</span>
                 </div>
-                <p>Our previous celebrations were a massive success, bringing hundreds of Telugu families together. We are committed to making Ugadi 2026 even more memorable!</p>
+                <p>After record-breaking attendance in our previous events, we are preparing an even grander experience for <strong>Vishwavasu Nama Ugadi 2026</strong>!</p>
 
                 <div class="contact-box">
-                    <h3 style="margin-top:0; color: #27ae60;">📍 Venue Location</h3>
+                    <h3 style="margin-top:0;">📍 Venue & Address</h3>
                     <p style="margin-bottom: 20px;">
                         <strong>Bürgerhaus Weserterrassen</strong><br>
                         Korbhauser Weg 1,<br>
                         28279 Bremen, Germany
                     </p>
                     
-                    <h3 style="color: #27ae60;">📞 Contact Information</h3>
-                    <p><strong>xxxxx xxxxxxx</strong> (Organizing Committee)<br>
-                    Phone: <a href="tel:+491xxxxxxxxxxx" style="color: inherit;">+49 xxx xxxx xxxxx</a><br>
-                    Email: <a href="mailto:xxxxxxxxxxx@gmail.com" style="color: inherit;">namsateta@gmail.com</a></p>
+                    <h3>📞 Contact Person</h3>
+                    <p><strong>Jaya Kishore</strong><br>
+                    Phone: <a href="tel:+491766654645454" style="color: inherit; text-decoration: none;">+49 176 6654 6454</a><br>
+                    Email: <a href="mailto:namsateta@gmail.com" style="color: inherit; text-decoration: none;">namsateta@gmail.com</a></p>
                 </div>
             </div>
 
             <div class="flyer-preview">
                 <img src="Flyer.jpg" alt="Ugadi 2026 Official Flyer">
                 <div style="text-align: center; margin-top: 20px;">
-                    <p style="font-weight: bold; color: #27ae60;">Join us for Culture, Food, and Fun!</p>
-                    <a href="register.html" class="back-btn" style="width: 80%;">SECURE YOUR SPOT</a>
+                    <p style="font-weight: bold; color: var(--deep-green); font-size: 1.1rem;">Celebrate with Food, Culture, and Tradition!</p>
+                    <a href="register.html" class="back-btn" style="width: 100%;">SECURE YOUR SPOT</a>
                 </div>
             </div>
         </div>
@@ -143,9 +143,8 @@
 
     <footer>
         <p>&copy; 2026 Telugu Association Bremen (TAB). All Rights Reserved.</p>
-        <p style="font-size: 0.8rem; color: #666;">Korbhauser Weg 1, 28279 Bremen | Namaste!</p>
+        <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 10px;">Korbhauser Weg 1, 28279 Bremen | Namaste!</p>
     </footer>
 
 </body>
-
 </html>

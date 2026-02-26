@@ -2,28 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Schedule | TAB Bremen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Schedule | TAB Bremen</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><h1>Event Schedule</h1></header>
-<nav><a href="index.html">HOME</a><a href="about.html">ABOUT</a><a href="schedule.html">UGADI SCHEDULE</a><a href="register.html">REGISTER</a></nav>
 
-<div class="container">
+<header>
+    <img src="logo.jpg" alt="TAB Bremen Logo" class="logo-img">
+    <h1 style="margin:0; font-size: 1.8rem;">Ugadi 2026 Schedule</h1>
+</header>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="schedule.html" style="background: var(--primary-green); color: var(--saffron-yellow);">SCHEDULE</a>
+    <a href="register.html">REGISTER</a>
+</nav>
+
+<main class="container">
     <div class="card">
-        <h2>Ugadi 2026 Itinerary</h2>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-            <tr style="background: #27ae60; color: white;">
-                <th style="padding: 15px; text-align: left;">Time</th>
-                <th style="padding: 15px; text-align: left;">Program</th>
-            </tr>
-            <tr><td style="padding: 15px; border-bottom: 1px solid #eee;">14:00</td><td>Traditional Welcome & Lighting of Lamp</td></tr>
-            <tr><td style="padding: 15px; border-bottom: 1px solid #eee;">14:30</td><td>Panchanga Sravanam</td></tr>
-            <tr><td style="padding: 15px; border-bottom: 1px solid #eee;">15:30</td><td>Cultural Extravaganza</td></tr>
-            <tr><td style="padding: 15px; border-bottom: 1px solid #eee;">18:00</td><td>Authentic Festive Dinner</td></tr>
+        <h2>Program Itinerary</h2>
+        <p>Join us on <strong>Saturday, March 21, 2026</strong> for a day filled with tradition.</p>
+        
+        
+
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time-slot">14:00 - 14:30</td>
+                    <td>Guest Welcome & Lighting of the Lamp</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">14:30 - 15:30</td>
+                    <td>Panchanga Sravanam (Almanac Reading)</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">15:30 - 17:45</td>
+                    <td>Cultural Performances (Dance, Singing, Skits)</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">17:45 - 18:00</td>
+                    <td>Vote of Thanks & Community Updates</td>
+                </tr>
+                <tr>
+                    <td class="time-slot" style="color: #d35400;">18:00 Onwards</td>
+                    <td><strong>Authentic Festive Dinner (Vindu Bhojanam)</strong></td>
+                </tr>
+            </tbody>
         </table>
-        <a href="index.html" class="back-btn">← BACK TO HOME</a>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <p><strong>Venue:</strong> Bremen Arsten<br>Korbhauser Weg 1, 28279 Bremen</p>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </div>
     </div>
-</div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Telugu Association Bremen (TAB). All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
