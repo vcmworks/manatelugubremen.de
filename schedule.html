@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Schedule | TAB Bremen</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: var(--white); }
+        .schedule-table th { background: var(--primary-green); color: var(--saffron-yellow); padding: 15px; text-align: left; }
+        .schedule-table td { padding: 15px; border-bottom: 1px solid #eee; }
+        .schedule-table tr:hover { background: #fdfae6; }
+        .time-slot { font-weight: bold; color: var(--primary-green); width: 140px; white-space: nowrap; }
+        .activity-title { font-weight: 600; color: var(--text-dark); display: block; }
+        .activity-desc { font-size: 0.85rem; color: #666; }
+        .highlight-row { background-color: #fff9c4 !important; font-weight: bold; }
+    </style>
 </head>
 <body>
 
 <header>
     <img src="logo.jpg" alt="TAB Bremen Logo" class="logo-img">
-    <h1 style="margin:0; font-size: 1.8rem;">Ugadi 2026 Schedule</h1>
+    <h1 style="margin:0; font-size: 1.8rem;">Ugadi 2026 Detailed Schedule</h1>
 </header>
 
 <nav>
@@ -22,45 +32,72 @@
 
 <main class="container">
     <div class="card">
-        <h2>Program Itinerary</h2>
-        <p>Join us on <strong>Saturday, March 21, 2026</strong> for a day filled with tradition.</p>
-        
-        
+        <h2>Program Timeline</h2>
+        <p>Join us at <strong>Korbhauser Weg 1, 28279 Bremen, Germany</strong> for an evening of tradition, food, and music.</p>
 
         <table class="schedule-table">
             <thead>
                 <tr>
                     <th>Time</th>
-                    <th>Activity</th>
+                    <th>Activity Details</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="time-slot">14:00 - 14:30</td>
-                    <td>Guest Welcome & Lighting of the Lamp</td>
+                    <td class="time-slot">14:30 - 15:00</td>
+                    <td>
+                        <span class="activity-title">Guest Arrival</span>
+                        <span class="activity-desc">Traditional welcome with Ugadi Pachadi.</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="time-slot">14:30 - 15:30</td>
-                    <td>Panchanga Sravanam (Almanac Reading)</td>
+                    <td class="time-slot">15:00 - 15:45</td>
+                    <td>
+                        <span class="activity-title">Inauguration & Prayer</span>
+                        <span class="activity-desc">Jyothi Prajwalana & Panchanga Sravanam.</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="time-slot">15:30 - 17:45</td>
-                    <td>Cultural Performances (Dance, Singing, Skits)</td>
+                    <td class="time-slot">15:45 - 17:30</td>
+                    <td>
+                        <span class="activity-title">Cultural Extravaganza</span>
+                        <span class="activity-desc">Kids performances, Classical dance, and Skits.</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="time-slot">17:45 - 18:00</td>
-                    <td>Vote of Thanks & Community Updates</td>
+                    <td class="time-slot">17:30 - 18:15</td>
+                    <td>
+                        <span class="activity-title">Adult performances & Awards</span>
+                        <span class="activity-desc">Singing performances and recognition of volunteers.</span>
+                    </td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="time-slot">18:15 - 19:30</td>
+                    <td>
+                        <span class="activity-title">🍛 Grand Ugadi Feast</span>
+                        <span class="activity-desc">Traditional Vindu Bhojanam served to all guests.</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="time-slot" style="color: #d35400;">18:00 Onwards</td>
-                    <td><strong>Authentic Festive Dinner (Vindu Bhojanam)</strong></td>
+                    <td class="time-slot">19:30 - 20:30</td>
+                    <td>
+                        <span class="activity-title">🎧 DJ Dance Floor</span>
+                        <span class="activity-desc">Non-stop Telugu & Bollywood hits to celebrate the New Year.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time-slot">20:30 - 21:00</td>
+                    <td>
+                        <span class="activity-title">Closing & Cleaning</span>
+                        <span class="activity-desc">Final photos, vote of thanks, and community cleanup.</span>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
-        <div style="margin-top: 40px; text-align: center;">
-            <p><strong>Venue:</strong> Bremen Arsten<br>Korbhauser Weg 1, 28279 Bremen</p>
-            <a href="index.html" class="back-btn">← Back to Home</a>
+        <div style="margin-top: 40px; text-align: center; background: #fafafa; padding: 20px; border-radius: 15px; border: 1px dashed var(--primary-green);">
+            <p><strong>⚠️ Note for Volunteers:</strong> Please report to the venue by 14:00 for decoration and setup assistance.</p>
+            <a href="index.html" class="back-btn" style="text-decoration: none;">← Back to Home</a>
         </div>
     </div>
 </main>

@@ -3,236 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | TAB Bremen Ugadi 2026</title>
+    <title>Register | TAB Bremen</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Shared Root Colors for Uniformity */
-        :root {
-            --primary-green: #27ae60;
-            --deep-green: #1e8449;
-            --saffron-yellow: #f1c40f;
-            --cream-bg: #FFFDD0;
-            --white: #ffffff;
-            --text-dark: #2c3e50;
-        }
-
-        body { 
-            background-color: var(--cream-bg); 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            color: var(--text-dark);
-        }
-
-        /* Standard Header & Nav */
-        header { background-color: var(--deep-green); color: var(--saffron-yellow); padding: 25px 20px; text-align: center; border-bottom: 8px solid var(--saffron-yellow); }
-        .logo-img { height: 90px; border-radius: 12px; margin-bottom: 10px; }
-        nav { background: var(--saffron-yellow); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; flex-wrap: wrap; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        nav a { padding: 15px 20px; text-decoration: none; color: var(--deep-green); font-weight: 900; text-transform: uppercase; font-size: 0.95rem; }
-        nav a:hover { background-color: var(--deep-green); color: var(--saffron-yellow); }
-
-        /* Form Layout Refinements */
-        .form-wrapper {
-            max-width: 850px;
-            margin: 40px auto;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            border-top: 12px solid var(--primary-green);
-        }
-
-        .form-header { text-align: center; margin-bottom: 40px; }
-        .form-header h2 { border: none; font-size: 2.2rem; margin-bottom: 5px; color: var(--primary-green); }
-
-        /* Improved Section Title Alignment */
-        .section-title {
+        /* Price Display Styles */
+        .price-badge-container {
             display: flex;
-            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .price-badge {
             background: #fdfae6;
-            padding: 12px 20px;
-            border-radius: 8px;
-            margin: 35px 0 20px 0;
-            color: var(--deep-green);
-            font-weight: 800;
-            border-left: 6px solid var(--saffron-yellow);
-            font-size: 1.1rem;
-        }
-
-        /* Field Alignment Grid */
-        .field-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-            gap: 20px;
-            margin-bottom: 15px;
-        }
-
-        /* For fields that need full width */
-        .full-width { grid-column: span 2; }
-
-        .input-group { display: flex; flex-direction: column; }
-        label { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: #555; }
-        
-        input, select {
-            padding: 14px;
-            border: 1.5px solid #e0e0e0;
+            border: 1px solid #f1c40f;
+            padding: 10px 15px;
             border-radius: 10px;
-            font-size: 1rem;
-            background: #fafafa;
-            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 120px;
+        }
+        .price-badge strong { display: block; color: var(--primary-green); font-size: 1.1rem; }
+        .price-badge span { font-size: 0.8rem; color: #666; }
+
+        .live-calc-box {
+            position: sticky;
+            bottom: 20px;
+            background: var(--primary-green);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+            z-index: 100;
+            margin-top: 20px;
         }
 
-        input:focus {
-            background: #fff;
-            border-color: var(--primary-green);
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(39, 174, 96, 0.1);
-        }
+        .total-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .total-amount { font-size: 1.8rem; font-weight: 900; }
 
-        /* Volunteering Checkbox Alignment */
-        .option-box {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #eee;
-        }
-
-        .option-item { display: flex; align-items: center; font-size: 0.95rem; cursor: pointer; }
-        .option-item input { margin-right: 12px; width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary-green); }
-
-        .submit-area { text-align: center; margin-top: 50px; }
-
-        /* Mobile View Alignment Fixes */
-        @media (max-width: 600px) {
-            .field-grid { grid-template-columns: 1fr; } /* Stack to 1 column on small screens */
-            .full-width { grid-column: span 1; }
-            .form-wrapper { padding: 25px 15px; margin: 20px 10px; }
-            .form-header h2 { font-size: 1.7rem; }
-        }
+        .breakdown-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+        .breakdown-table td { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .breakdown-table .grand-total { font-weight: bold; font-size: 1.2rem; border-top: 2px solid var(--primary-green); }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.jpg" alt="TAB Bremen Logo" class="logo-img">
-    <h1 style="margin:0; font-size: 1.8rem;">Telugu Association Bremen (TAB)</h1>
+    <img src="logo.jpg" alt="TAB Logo" class="logo-img">
+    <h1>Telugu Association Bremen</h1>
 </header>
 
 <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="schedule.html">Schedule</a>
-    <a href="register.html" style="background: var(--deep-green); color: var(--saffron-yellow);">Register</a>
+    <a href="register.html" style="background: var(--primary-green); color: var(--saffron-yellow);">Register</a>
 </nav>
 
-<div class="form-wrapper">
-    <div class="form-header">
-        <h2>Event Registration</h2>
-        <p>Ugadi Sambaralu 2026 | Korbhauser Weg 1, Bremen</p>
-    </div>
-
-    <form id="registrationForm">
-        <div class="section-title">1. Primary Contact Information</div>
-        <div class="field-grid">
-            <div class="input-group full-width">
-                <label>Full Name</label>
-                <input type="text" name="full_name" placeholder="E.g. Arjun Reddy" required>
-            </div>
-            <div class="input-group">
-                <label>Email Address</label>
-                <input type="email" name="email" placeholder="example@gmail.com" required>
-            </div>
-            <div class="input-group">
-                <label>Phone / WhatsApp</label>
-                <input type="tel" name="phone" placeholder="+49 123 456789" required>
+<div class="container">
+    <div class="card">
+        <div class="form-header">
+            <h2>Ugadi Sambaralu 2026 Registration</h2>
+            <p>Please select your guest categories below.</p>
+            
+            <div class="price-badge-container">
+				<div class="price-badge"><strong>Free</strong><span>Kid (0-4)</span></div>
+                <div class="price-badge"><strong>6€</strong><span>Kid (5-12)</span></div>
+                <div class="price-badge"><strong>10€</strong><span>Student(12+)</span></div>
+				<div class="price-badge"><strong>12€</strong><span>Adults </span></div>             
+                
             </div>
         </div>
 
-        <div class="section-title">2. Headcount Breakdown</div>
-        <div class="field-grid">
-            <div class="input-group">
-                <label>Adults (12+ Years)</label>
-                <input type="number" name="adults" value="1" min="0">
+        <form id="registrationForm">
+            <div class="section-title">1. Contact Details</div>
+            <div class="grid-row">
+                <div class="input-group"><label>Full Name</label><input type="text" name="full_name" id="userName" required></div>
+                <div class="input-group"><label>Email</label><input type="email" name="email" required></div>
+                <div class="input-group"><label>WhatsApp Number</label><input type="tel" name="phone" placeholder="+49..." required></div>
             </div>
-            <div class="input-group">
-                <label>Students</label>
-                <input type="number" name="students" value="0" min="0">
-            </div>
-            <div class="input-group">
-                <label>Children (5-12 Years)</label>
-                <input type="number" name="kids_mid" value="0" min="0">
-            </div>
-            <div class="input-group">
-                <label>Toddlers (0-4 Years)</label>
-                <input type="number" name="kids_small" value="0" min="0">
-            </div>
-        </div>
 
-        <div class="section-title">3. Cultural & Volunteering</div>
-        <div class="field-grid">
-            <div class="input-group full-width">
-                <label>Would you like to perform?</label>
-                <select name="cultural">
-                    <option value="None">Just Attending</option>
-                    <option value="Dance-Classical">Classical Dance (Solo/Group)</option>
-                    <option value="Dance-Folk">Folk/Bollywood Dance</option>
-                    <option value="Singing">Singing (Vocal/Instrumental)</option>
-                    <option value="Skit">Drama / Skit</option>
-                    <option value="Fashion">Kids Fashion Show</option>
-                </select>
+            <div class="section-title">2. Headcount</div>
+            <div class="grid-row">
+                <div class="input-group"><label>Adults (12+)</label><input type="number" name="adults" id="num_adults" value="1" min="0"></div>
+                <div class="input-group"><label>Students</label><input type="number" name="students" id="num_students" value="0" min="0"></div>
+                <div class="input-group"><label>Kids (5-12)</label><input type="number" name="kids_mid" id="num_kids_mid" value="0" min="0"></div>
+                <div class="input-group"><label>Kids (0-4)</label><input type="number" name="kids_small" id="num_kids_small" value="0" min="0"></div>
             </div>
-        </div>
 
-        <label style="display:block; margin-top:15px;">Volunteer Interests (Optional)</label>
-        <div class="option-box">
-            <label class="option-item"><input type="checkbox" name="volunteer" value="Decor"> Hall Decoration</label>
-            <label class="option-item"><input type="checkbox" name="volunteer" value="Food"> Food Serving</label>
-            <label class="option-item"><input type="checkbox" name="volunteer" value="Reception"> Reception Desk</label>
-            <label class="option-item"><input type="checkbox" name="volunteer" value="Media"> Photography/Video</label>
-            <label class="option-item"><input type="checkbox" name="volunteer" value="Cleaning"> Post-Event Cleanup</label>
-        </div>
+            <div class="live-calc-box">
+                <span class="total-label">Total Amount</span>
+                <span class="total-amount"><span id="liveTotal">12</span>€</span>
+            </div>
 
-        <div class="submit-area">
-            <button type="submit" id="submitBtn" class="back-btn" style="width: 100%; max-width: 400px; cursor: pointer;">
-                Confirm Registration
-            </button>
-        </div>
-    </form>
+            <div class="section-title">3. Participation & Volunteering</div>
+            <div class="option-box">
+                <label class="option-item"><input type="checkbox" name="cultural" value="Dance"> Dance</label>
+                <label class="option-item"><input type="checkbox" name="cultural" value="Singing"> Singing</label>
+                <label class="option-item"><input type="checkbox" name="volunteer" value="Food"> Food Support</label>
+                <label class="option-item"><input type="checkbox" name="volunteer" value="Decor"> Decoration</label>
+            </div>
 
-    <div id="successMessage" style="display:none; text-align: center; padding: 40px;">
-        <h2 style="color: var(--primary-green); border: none;">Dhanyavadalu!</h2>
-        <p>Registration Successful. A confirmation email will be sent shortly.</p>
-        <a href="index.html" class="back-btn" style="text-decoration: none;">← Return to Home</a>
+            <div style="text-align: center; margin-top: 40px;">
+                <button type="submit" id="submitBtn" class="back-btn" style="width: 100%;">Confirm Registration</button>
+            </div>
+        </form>
+
+        <div id="successMessage" style="display:none; padding: 25px; border: 2px solid var(--primary-green); border-radius: 15px; background: #fff;">
+            <h2 style="color: var(--primary-green); text-align: center; border: none;">Registration Received!</h2>
+            
+            <div class="card" style="border-top: none; background: #fafafa; padding: 20px;">
+                <h4 style="margin-top: 0; color: var(--primary-green);">📊 Price Breakdown</h4>
+                <table class="breakdown-table">
+                    <tr id="res_adults"><td>Adults (12€ x <span id="out_adults"></span>)</td><td style="text-align: right;"><span id="sum_adults"></span>€</td></tr>
+                    <tr id="res_students"><td>Students (10€ x <span id="out_students"></span>)</td><td style="text-align: right;"><span id="sum_students"></span>€</td></tr>
+                    <tr id="res_kids"><td>Kids 5-12 (6€ x <span id="out_kids"></span>)</td><td style="text-align: right;"><span id="sum_kids"></span>€</td></tr>
+                    <tr class="grand-total"><td>Total Amount to Pay</td><td style="text-align: right; color: #d35400;"><span id="finalAmount"></span>€</td></tr>
+                </table>
+            </div>
+
+            <div style="background: #FFF3E0; padding: 20px; border-radius: 10px; border-left: 8px solid var(--saffron-yellow); margin: 20px 0;">
+                <h4 style="margin-top:0;">💳 Payment Details</h4>
+                <p><strong>Option 1: PayPal (Family & Friends)</strong><br>
+                <a href="#" id="payPalLink" target="_blank" class="back-btn" style="padding: 10px 20px; font-size: 0.95rem; margin-top: 10px; display: inline-block;">Pay via PayPal</a></p>
+                <p><strong>Option 2: Bank Transfer</strong><br>
+                Seenaiah Nagulagunta | IBAN: DE47 3002 0900 3280 8206 26<br>
+                <strong>Reference:</strong> <span id="refName" style="color: #d35400; font-weight: bold;"></span> – Ugadi 2026</p>
+            </div>
+
+            <div style="text-align: center;"><a href="index.html" class="back-btn" style="background: #eee; border-color: #ccc; color: #666;">Return Home</a></div>
+        </div>
     </div>
 </div>
 
-<footer>
-    <p>&copy; 2026 Telugu Association Bremen (TAB). All Rights Reserved.</p>
-</footer>
-
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxV8PGE58g6pysJlpMJVlxddwE8kyFaqSirfu-GrMAzF6zCZy0bWwpiUzpHPpyPPxfb/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwaUZQSg2ez_CAtC93UyOR1E0Q77kX_JD6nt446qSOEAcUUPpMAWH1Yz9rkWRzYDBc/exec';
     const form = document.getElementById('registrationForm');
     const btn = document.getElementById('submitBtn');
 
+    function calculate() {
+        const a = parseInt(document.getElementById('num_adults').value) || 0;
+        const s = parseInt(document.getElementById('num_students').value) || 0;
+        const k = parseInt(document.getElementById('num_kids_mid').value) || 0;
+        const total = (a * 12) + (s * 10) + (k * 6);
+        document.getElementById('liveTotal').innerText = total;
+        return { a, s, k, total };
+    }
+
+    document.querySelectorAll('input[type="number"]').forEach(el => el.addEventListener('input', calculate));
+
     form.addEventListener('submit', e => {
         e.preventDefault();
+        const { a, s, k, total } = calculate();
+        const name = document.getElementById('userName').value;
+
         btn.disabled = true;
         btn.innerHTML = "Processing...";
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                form.style.display = "none";
-                document.getElementById('successMessage').style.display = "block";
-                window.scrollTo(0, 0);
-            })
-            .catch(error => {
-                alert('Submission failed. Please check your connection.');
-                btn.disabled = false;
-                btn.innerHTML = "Confirm Registration";
-            });
+        .then(() => {
+            document.getElementById('out_adults').innerText = a;
+            document.getElementById('sum_adults').innerText = a * 12;
+            document.getElementById('out_students').innerText = s;
+            document.getElementById('sum_students').innerText = s * 10;
+            document.getElementById('out_kids').innerText = k;
+            document.getElementById('sum_kids').innerText = k * 6;
+            document.getElementById('finalAmount').innerText = total;
+            document.getElementById('refName').innerText = name;
+            document.getElementById('payPalLink').href = `https://paypal.me/SNAGULAGUNTA/${total}`;
+            
+            form.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            window.scrollTo(0,0);
+        });
     });
 </script>
 

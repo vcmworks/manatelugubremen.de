@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | TAB Bremen</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gallery Styles */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .gallery-item p {
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .pachadi-container {
+            background: #fdfae6;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px dashed var(--primary-green);
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .pachadi-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,20 +79,42 @@
         
         <p>Whether you are a student at the University of Bremen, a professional in the Technology Park, or a family residing in the Weser region, TAB provides a "home away from home" to connect and celebrate.</p>
 
-        <h3 style="color: var(--primary-green); margin-top: 30px;">The Spirit of Ugadi</h3>
-        <p>Ugadi marks the beginning of the <strong>Prabava Nama Samvatsaram</strong>. Central to the festival is the <em>Ugadi Pachadi</em>, a dish with six tastes representing the six emotions of life. It reminds us to face the coming year with equanimity.</p>
-        
-        [Image of Ugadi Pachadi ingredients and their meanings]
+        <div class="pachadi-container">
+            <h3 style="color: var(--primary-green); margin-top: 0;">The Spirit of Ugadi</h3>
+            <p>Ugadi marks the beginning of the <strong>Prabava Nama Samvatsaram</strong>.</p>
+            
+            
+            
+            <p style="font-style: italic; font-size: 0.9rem; margin-top: 10px;">
+                The <em>Ugadi Pachadi</em> is a unique dish with six tastes representing the six emotions of life: Sadness, Happiness, Anger, Fear, Disgust, and Surprise.
+            </p>
+        </div>
 
         <h3 style="color: var(--primary-green); margin-top: 30px;">A Legacy of Success</h3>
-        <p>Our community has grown significantly over the years. We fondly look back at the massive success of our previous celebrations:</p>
+        <p>Our community has grown significantly over the years. Here are some glimpses from our previous sold-out celebrations:</p>
+
+        <div class="photo-gallery">
+            <div class="gallery-item">
+                <img src="images/sankranthi_2024.jpg" alt="Sankranthi 2024 Celebration">
+                <p>Sankranthi 2024 Highlights</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/ugadi_2023.jpg" alt="Ugadi 2023 Performances">
+                <p>Ugadi 2023 Cultural Showcase</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/sankranthi_2023.jpg" alt="Traditional Community Feast">
+                <p>Traditional Vindu Bhojanam</p>
+            </div>
+        </div>
+
         <ul style="list-style-type: square; padding-left: 20px;">
             <li><strong>Sankranthi 2023:</strong> Our first major post-pandemic gathering.</li>
             <li><strong>Ugadi 2023:</strong> A vibrant showcase of local talent.</li>
             <li><strong>Sankranthi 2024:</strong> A sold-out event with traditional flavors.</li>
         </ul>
         
-        <div style="text-align: center;">
+        <div style="text-align: center; margin-top: 40px;">
             <a href="index.html" class="back-btn">← Back to Home</a>
         </div>
     </div>
